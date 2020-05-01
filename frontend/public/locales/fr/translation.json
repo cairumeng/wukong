@@ -1,0 +1,8 @@
+{
+  "deliveryInfo":"Livraison gratuite. Aux départements du 75: pour une commande de fruit légumes et petits articles à grignoter, le montant minimum est de 39€; pour une commande comprenant viande et fruits de mer, le montant minimum est de 50€. Aux départements du 78, 91 , 92, 93, 94 et 95, le montant minimum est de 69€.",
+  "logo_name": "Wukong",
+  "actions": {
+        "login": "Login",
+        "register": "Register"
+    }
+}

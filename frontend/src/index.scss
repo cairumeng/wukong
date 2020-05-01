@@ -1,0 +1,104 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css');
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+*, body {
+    font-family: 'Lato', sans-serif;
+    
+}
+
+html {
+    position: relative;
+    font-size: 14px;
+    background: #f2f2f2;
+    -webkit-tap-highlight-color: transparent;
+}
+
+a {
+    color: #222;
+
+    &:hover {
+        color: #222;
+        text-decoration: none;
+    }
+}
+
+#root {
+    min-height: 100vh;
+}
+
+body {
+    background: #f2f2f2;
+}
+
+.btn-success, .btn-success.disabled {
+    background: #7ccb30;
+    border: 1px solid #7ccb30;
+
+    &:hover, &:active, &:focus {
+        background: darken(#7ccb30, 10%);
+        border: 1px solid darken(#7ccb30, 10%);
+    }
+}
+
+.btn-light{
+    background: #e4e7ea;
+    border: 1px solid #e4e7ea;
+    border-radius: 0;
+}
+
+ul {
+    list-style: none;
+    padding:0
+}
+
+.btn-rounded {
+    border-radius: 98px;
+}
+
+.white-box{
+    background: #fff;
+    padding: 25px;
+    margin-bottom: 30px;
+    -webkit-transition: .3s;
+    transition: .3s;
+    border-radius: 0;
+}  
+
+
+.eye-btn{
+    background: #e4e7ea;
+    border: 1px solid #e4e7ea;
+    border-radius: 0;
+}
+.nowrap {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+/* Grow */
+.hvr-grow {
+    display: inline-block;
+    vertical-align: middle;
+    transform: translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    transition-duration: 0.3s;
+    transition-property: transform;
+    
+}
+.hvr-grow:hover,
+.hvr-grow:focus,
+.hvr-grow:active {
+    transform: scale(1.02);
+}
+
+.dropdown-item.active, .dropdown-item:active {
+    color: #7ccb30;
+}
+
+.dropdown-item.hover, .dropdown-item:hover {
+    color: white;
+}
+
