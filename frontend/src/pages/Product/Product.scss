@@ -1,0 +1,59 @@
+#product{
+    .container{
+        margin-top: 30px;
+        width: 970px;
+        margin-right: auto;
+        margin-left: auto;
+        padding-left: 15px;
+        padding-right: 15px;
+        background: #fff;
+        padding: 25px;
+        margin-bottom: 30px;
+        border-radius: 0;
+    }
+    .product-image{
+        text-align: center;
+        img{
+            border: 1px solid #f5f5f5;
+            display: block;
+            max-width: 100%;
+            height: auto;
+        
+        }
+    }
+    .btn-decrease {
+        border: 2px solid #d3d3d3;
+        color: #7ccb30;
+        background: #fff;
+        // btn 属性的表达
+        &[disabled] {
+            color: #d3d3d3;
+            cursor: not-allowed;
+        }
+    }
+
+    .btn-increase {
+        background: #7ccb30;
+        color: #fff;
+        border: none;
+    }
+    
+    .btn-quantity {
+        border-radius: 2px!important;
+        height: 28px;
+        width: 28px;
+        line-height: 28px;
+        padding: 0!important;
+    }
+    .quantity-input {
+        width: 50px;
+        border-radius: 0!important;
+        border: 1px solid #fff;
+    }
+    
+    .btn-outline {
+        color: inherit;
+        background-color: transparent;
+        transition: all .5s;
+    }
+}
