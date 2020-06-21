@@ -21,12 +21,24 @@ const getCities = async (q) => {
 }
 
 const getAddresses = async (userId) => {
-  const addresses = await Address.findAll({
+  let addresses = await Address.findAll({
     where: {
       userId,
     },
     attributes: ['firstName', 'lastName', 'phone', 'address', 'cityId'],
   })
+
+  addresses = await Promise.all(
+    addresses.map(async (address) => ({
+      ...address.dataValues,
+      city: await City.findOne({
+        where: {
+          id: address.dataValues.cityId,
+        },
+        attributes: ['city', 'postalCode'],
+      }),
+    }))
+  )
 
   return addresses
 }

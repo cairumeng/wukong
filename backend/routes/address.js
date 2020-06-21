@@ -7,6 +7,7 @@ const {
   getAddresses,
 } = require('../services/address')
 const { CityCollection } = require('../resources/CityResource')
+const { AddressCollection } = require('../resources/AddressResource')
 router.prefix('/api/address')
 
 router.post('/', checkAuth, async (ctx, next) => {
@@ -20,7 +21,6 @@ router.post('/', checkAuth, async (ctx, next) => {
     phone,
   } = ctx.request.body
 
-  console.log(address)
   const userId = ctx.authUser.dataValues.id
 
   ctx.body = await createAddress({
@@ -37,7 +37,7 @@ router.post('/', checkAuth, async (ctx, next) => {
 
 router.get('/', checkAuth, async (ctx, next) => {
   const userId = ctx.authUser.dataValues.id
-  ctx.body = await getAddresses(userId)
+  ctx.body = await AddressCollection(await getAddresses(userId))
 })
 
 router.get('/cities', async (ctx, next) => {
