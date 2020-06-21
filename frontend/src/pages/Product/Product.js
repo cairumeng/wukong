@@ -7,7 +7,6 @@ const Product = ({ match }) => {
   const [quantity, setQuantity] = useState(1)
 
   useEffect(() => {
-    console.log(match.params.id)
     axios.get(`products/${match.params.id}`).then((res) => {
       setProduct(res)
       setQuantity(res.unit)

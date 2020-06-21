@@ -1,6 +1,5 @@
 const { Op } = require('sequelize')
-const { City } = require('../models')
-const { Address } = require('../models')
+const { City, Address } = require('../models')
 
 const getCities = async (q) => {
   const cities = await City.findAll({
@@ -21,6 +20,17 @@ const getCities = async (q) => {
   return cities
 }
 
+const getAddresses = async (userId) => {
+  const addresses = await Address.findAll({
+    where: {
+      userId,
+    },
+    attributes: ['firstName', 'lastName', 'phone', 'address', 'cityId'],
+  })
+
+  return addresses
+}
+
 const createAddress = async ({
   userId,
   cityId,
@@ -28,6 +38,7 @@ const createAddress = async ({
   lastName,
   lat,
   lng,
+  address,
   phone,
 }) => {
   return Address.create({
@@ -35,6 +46,7 @@ const createAddress = async ({
     cityId,
     firstName,
     lastName,
+    address,
     lat,
     lng,
     phone,
@@ -44,4 +56,5 @@ const createAddress = async ({
 module.exports = {
   getCities,
   createAddress,
+  getAddresses,
 }

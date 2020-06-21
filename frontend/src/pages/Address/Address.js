@@ -1,6 +1,15 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import axios from '../../axios'
 const Address = () => {
+  const [addresses, setAddresses] = useState({})
+
+  useEffect(() => {
+    axios.get('/').then((addresses) => {
+      setAddresses(addresses)
+    })
+  }, [])
+
   return (
     <div className="white-box mt-4">
       <h3>选择送达地址</h3>
